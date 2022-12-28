@@ -12,4 +12,28 @@ class UsersController < ApplicationController
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
   end
+
+  def show
+    @user = User.find_by(id: params["id"])
+    render template: "users/show"
+  end
+
+  def update
+    user = User.find_by(id: params["id"])
+    user.name = params["name"] || user.name
+    user.email = params["email"] || user.email
+    user.streak = params["streak"] || user.streak
+    if user.save
+      render json: user.as_json
+    else
+      render json: { errors: user.errors.full_messages }, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    user = User.find_by(params[:id])
+    user.destroy
+    render json: { message: "User has been deleted" }
+  end
+  
 end

@@ -1,0 +1,8 @@
+@activities.map do |activity|
+  {
+    id: activity.id,
+    name: activity.name,
+    user: activity.user.name,
+    selected: activity.selected
+  }
+end
