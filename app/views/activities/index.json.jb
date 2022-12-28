@@ -2,7 +2,6 @@
   {
     id: activity.id,
     name: activity.name,
-    user: activity.user.name,
-    selected: activity.selected
+    user: activity.user.name
   }
 end

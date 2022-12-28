@@ -54,7 +54,7 @@ Authorization: Bearer {{jwt}}
 
 ######################################
 ### User Show
-GET http://localhost:3000/users/1.json
+GET http://localhost:3000/users/3.json
 
 ### User Create
 POST http://localhost:3000/users.json
