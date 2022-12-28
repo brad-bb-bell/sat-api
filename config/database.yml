@@ -5,12 +5,12 @@ default: &default
 
 development:
   <<: *default
-  database: myapp_development
+  database: sat_development
 
 test:
   <<: *default
-  database: myapp_test
+  database: sat_test
 
 production:
   <<: *default
-  database: myapp_production
+  database: sat_production
