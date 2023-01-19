@@ -53,17 +53,20 @@ DELETE http://localhost:3000/did_its/62.json
 Authorization: Bearer {{jwt}}
 
 ######################################
+### User Index
+GET http://localhost:3000/users.json
+
 ### User Show
 GET http://localhost:3000/users/3.json
 
 ### User Create
 POST http://localhost:3000/users.json
 Content-Type: application/json
-Authorization: Bearer {{jwt}}
 
+#email has already been taken
 {
-  "name": "BB",
-  "email": "brad.bb.bell@gmail.com",
+  "name": "test3",
+  "email": "test2@gmail.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -86,6 +89,6 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "brad.bb.bell@gmail.com",
+  "email": "testtest@gmail.com",
   "password": "password"
 }

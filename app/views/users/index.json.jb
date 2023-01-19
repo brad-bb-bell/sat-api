@@ -1,6 +1,7 @@
 @users.map do |user|
   {
     id: user.id,
-    url: user_url(user, format: :json)
+    name: user.name,
+    email: user.email
   }
 end
