@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   patch "/activities/:id" => "activities#update"
   delete "/activities/:id" => "activities#destroy"
   
-  ###Did_It routes
+  ### Did_It routes
   get "/did_its" => "did_its#index"
   get "/did_its/:id" => "did_its#show"
   post "/did_its" => "did_its#create"

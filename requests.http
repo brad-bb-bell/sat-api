@@ -14,7 +14,7 @@ Authorization: Bearer {{jwt}}
 
 {
   "name": "code",
-  "user_id": "3"
+  "user_id": "10"
 }
 
 ### Activity Update
@@ -27,7 +27,7 @@ Authorization: Bearer {{jwt}}
 }
 
 ### Activity Destroy
-DELETE http://localhost:3000/activities/8.json
+DELETE http://localhost:3000/activities/10.json
 Authorization: Bearer {{jwt}}
 
 ######################################
@@ -63,7 +63,6 @@ GET http://localhost:3000/users/3.json
 POST http://localhost:3000/users.json
 Content-Type: application/json
 
-#email has already been taken
 {
   "name": "test3",
   "email": "test2@gmail.com",
@@ -89,6 +88,6 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "testtest@gmail.com",
+  "email": "check@test.com",
   "password": "password"
 }
