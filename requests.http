@@ -88,6 +88,6 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "check@test.com",
+  "email": "brad.bb.bell@gmail.com",
   "password": "password"
 }
