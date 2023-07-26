@@ -3,4 +3,5 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   has_many :activities
   has_many :did_its
+  has_many :categories
 end
