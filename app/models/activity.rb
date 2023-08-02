@@ -1,5 +1,6 @@
 class Activity < ApplicationRecord
   has_many :did_its
   belongs_to :user
-  belongs_to :category, optional: true
+  has_many :category_activities
+  has_many :categories, through: :category_activities
 end
