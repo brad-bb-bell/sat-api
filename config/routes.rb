@@ -23,8 +23,5 @@ Rails.application.routes.draw do
   get "/did_its/:id" => "did_its#show"
   post "/did_its" => "did_its#create"
   delete "/did_its/:id" => "did_its#destroy"
-
-  ### Categories routes
-  get "/categories" => "categories#index"
   
   end
