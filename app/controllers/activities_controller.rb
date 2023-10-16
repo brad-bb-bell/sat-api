@@ -1,7 +1,7 @@
 class ActivitiesController < ApplicationController
 
   def index
-    @activities = Activity.all
+    @activities = Activity.includes(:categories).all
     render template: "activities/index"
   end
 
