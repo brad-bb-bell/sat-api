@@ -1,6 +1,10 @@
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NzI4NTYxNTd9.Z8AnczK1Dl7UGWSAS3kqdKFRO5Ces1xxpTzHqjab8fg
 
 ######################################
+### Category Index
+GET http://localhost:3000/categories.json
+
+######################################
 ### Activity Index
 GET http://localhost:3000/activities.json
 
