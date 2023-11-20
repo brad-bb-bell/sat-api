@@ -44,7 +44,7 @@ Authorization: Bearer {{jwt}}
   "user_id": "10"
 }
 
-### Category Destory
+### Category Destroy
 ### Be sure to double check the category id
 DELETE http://localhost:3000/categories/10.json
 Authorization: Bearer {{jwt}}
