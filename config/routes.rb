@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   delete "/activities/:id" => "activities#destroy"
 
   ### Category routes
+  get "/categories" => "categories#index"
   post "/categories" => "categories#create"
   delete "/categories/:id" => "categories#destroy"
   
