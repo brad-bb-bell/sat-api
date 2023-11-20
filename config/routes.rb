@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   post "/activities" => "activities#create"
   patch "/activities/:id" => "activities#update"
   delete "/activities/:id" => "activities#destroy"
+
+  ### Category routes
+  post "/categories" => "categories#create"
   
   ### Did_It routes
   get "/did_its" => "did_its#index"
