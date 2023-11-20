@@ -31,6 +31,25 @@ DELETE http://localhost:3000/activities/10.json
 Authorization: Bearer {{jwt}}
 
 ######################################
+### Category Index
+GET http://localhost:3000/categories.json
+
+### Category Create
+POST http://localhost:3000/categories.json
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "name": "Test Category",
+  "user_id": "10"
+}
+
+### Category Destory
+### Be sure to double check the category id
+DELETE http://localhost:3000/categories/10.json
+Authorization: Bearer {{jwt}}
+
+######################################
 ### Did_It Index
 GET http://localhost:3000/did_its.json
 
