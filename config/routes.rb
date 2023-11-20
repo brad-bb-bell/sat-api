@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
   
   ### User routes
   get "/users" => "users#index"
