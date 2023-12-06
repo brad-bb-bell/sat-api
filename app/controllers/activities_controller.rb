@@ -26,6 +26,13 @@ class ActivitiesController < ApplicationController
     activity = Activity.find_by(id: params["id"])
     activity.name = params["name"] || activity.name
     activity.user_id = params["user_id"] || activity.user_id
+
+    # Update categories if provided
+    if params[:category_ids]
+      # Replace the current categories with the new set
+      activity.category_ids = params[:category_ids]
+    end
+
     if activity.save
       render json: activity.as_json
     else
