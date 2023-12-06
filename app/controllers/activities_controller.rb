@@ -34,7 +34,7 @@ class ActivitiesController < ApplicationController
     end
 
     if activity.save
-      render json: activity.as_json
+      render json: activity.as_json(include: :categories) # Include categories in the JSON response
     else
       render json: { errors: activity.errors.full_messages }, status: :unprocessable_entity
     end
