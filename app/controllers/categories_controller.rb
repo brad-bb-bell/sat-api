@@ -21,12 +21,14 @@ class CategoriesController < ApplicationController
     category = Category.find_by(id: params["id"])
   
     if category
-      # Remove associations
       CategoryActivity.where(category_id: category.id).delete_all
   
-      # Destroy the category
-      category.destroy
-      render json: { message: "Category and its associations have been removed" }
+      begin
+        category.destroy
+        render json: { message: "Category and its associations have been removed" }
+      rescue => e
+        render json: { error: e.message }, status: :internal_server_error
+      end
     else
       render json: { error: "Category not found" }, status: :not_found
     end

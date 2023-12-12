@@ -40,13 +40,13 @@ Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 {
-  "name": "Test Category",
+  "name": "Test Category 3",
   "user_id": "1"
 }
 
 ### Category Destroy
 ### Be sure to double check the category id
-DELETE http://localhost:3000/categories/2.json
+DELETE http://localhost:3000/categories/5.json
 Authorization: Bearer {{jwt}}
 
 ######################################
