@@ -19,8 +19,18 @@ class CategoriesController < ApplicationController
 
   def destroy
     category = Category.find_by(id: params["id"])
-    category.destroy
-    render json: { message: "Category has been removed" }
+  
+    if category
+      # Remove associations
+      CategoryActivity.where(category_id: category.id).delete_all
+  
+      # Destroy the category
+      category.destroy
+      render json: { message: "Category and its associations have been removed" }
+    else
+      render json: { error: "Category not found" }, status: :not_found
+    end
   end
+  
 
 end
