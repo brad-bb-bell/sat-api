@@ -27,12 +27,15 @@ class CategoriesController < ApplicationController
         category.destroy
         render json: { message: "Category and its associations have been removed" }
       rescue => e
+        Rails.logger.error e.message
+        e.backtrace.each { |line| Rails.logger.error line }
         render json: { error: e.message }, status: :internal_server_error
       end
     else
       render json: { error: "Category not found" }, status: :not_found
     end
   end
+  
   
 
 end
