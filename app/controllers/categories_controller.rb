@@ -21,16 +21,14 @@ class CategoriesController < ApplicationController
     category = Category.find_by(id: params["id"])
   
     if category
+      # If there's a direct foreign key reference
+      Activity.where(category_id: category.id).update_all(category_id: nil)
+  
+      # Remove associations in CategoryActivity table
       CategoryActivity.where(category_id: category.id).delete_all
   
-      begin
-        category.destroy
-        render json: { message: "Category and its associations have been removed" }
-      rescue => e
-        Rails.logger.error e.message
-        e.backtrace.each { |line| Rails.logger.error line }
-        render json: { error: e.message }, status: :internal_server_error
-      end
+      category.destroy
+      render json: { message: "Category and its associations have been removed" }
     else
       render json: { error: "Category not found" }, status: :not_found
     end
